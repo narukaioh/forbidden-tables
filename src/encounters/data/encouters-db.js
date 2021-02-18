@@ -245,7 +245,7 @@ export const encounters = [
   {
     title: 'O OGRO AMALDIÇOADO',
     resume:
-      'Trampo e encrenca, encrenca e trampo”. Uma voz grave e gutural ecoa pela região. No momento seguinte, vocês veem um ogro grande e musculoso arrastando um saco. Algo está chutando e se agitando lá dentro, fazendo com que o ogro bata no saco repetidamente. O movimento para de imediato. \"Eu mandei você calar a boca!\"',
+      'Trampo e encrenca, encrenca e trampo”. Uma voz grave e gutural ecoa pela região. No momento seguinte, vocês veem um ogro grande e musculoso arrastando um saco. Algo está chutando e se agitando lá dentro, fazendo com que o ogro bata no saco repetidamente. O movimento para de imediato. "Eu mandei você calar a boca!"',
     description:
       'Kurge, o ogro, está a caminho de seu covil com seu último prisioneiro. Dentro do saco pode ser encontrado o azarado Irmão Enferrujado Oker, que invocou a maldição do deus Ferrugem sobre Kurge. O ogro ainda não decidiu o que fazer com Oker, mas está considerando algo divertido, como praticar tiro ao alvo com pedras, ou arrancar seus membros do corpo. Depende do humor de Kurge. Kurge tem as estatísticas de jogo de um ogro típico, como encontradas na página 61.',
     type: 'Planície, Floresta, Floresta Sombria, Colina, Montanha, Ruína',
