@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { getEncounter } from '../index'
 import './encounter.css'
 
-const EncounterForm = ({ setEncounter }) => {
+const EncounterForm = ({ setEncounter, setError }) => {
   const [state, setState] = useState({ d66: null, type: null })
 
   const handlerInput = (event) => {
@@ -12,7 +12,27 @@ const EncounterForm = ({ setEncounter }) => {
 
   const handlerClick = () => {
     const { d66, type } = state
-    setEncounter(getEncounter({ d66, type }))
+    if (valid(d66) && type) {
+      setError(false)
+      setEncounter(getEncounter({ d66, type }))
+    } else {
+      setError(`Voce precisa preencher com valores válidos:
+       11-16, 21-26, 31-36, 41-46, 51-56 e 61-66.
+       Verifique também se escolheu um tipo de terreno.`)
+    }
+  }
+
+  const valid = (value) => {
+    const values = [
+      11,12,13,14,15,16,
+      21,22,23,24,25,26,
+      31,32,33,34,35,36,
+      41,42,43,44,45,46,
+      51,52,53,54,55,56,
+      61,62,63,64,65,66
+    ]
+
+    return values.includes(parseInt(value))
   }
 
   return (
@@ -46,13 +66,25 @@ const EncounterItem = ({ item }) => {
   </div>)
 }
 
+const MessageError = ({ error = false }) => {
+
+  if (error) {
+    return (<p className="message-error">{error}</p>)
+  }
+
+  return null
+}
+
 const Encounter = () => {
   const [encounter, setEncounter] = useState(false)
+  const [error, setError] = useState()
+
   return (
-    <>
-      <EncounterForm setEncounter={setEncounter} />
+    <div className="encounter-container">
+      <MessageError {...{ error }} />
+      <EncounterForm {...{ setEncounter, setError }}/>
       { encounter ? <EncounterItem item={encounter} /> : null }
-    </>
+    </div>
   )
 }
 
