@@ -1,4 +1,4 @@
-import Encounter from './encounters/component'
+import Encounter from './components/encounters/component'
 
 const App = () => {
   return (

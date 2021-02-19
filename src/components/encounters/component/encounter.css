@@ -1,4 +1,5 @@
 * { box-sizing: border-box; }
+
 .encounter-container {
   padding: 10px;
 }
@@ -67,18 +68,4 @@
 
 .encounter-item .type {
   text-transform: uppercase;
-}
-
-.message-error {
-  border: 1px solid #ff6161;
-  border-radius: 3px;
-  padding: 10px;
-  text-align: center;
-  color: white;
-  background: #ff6161;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 12px;
-  max-width: 400px;
-  margin: 0 auto;
 }

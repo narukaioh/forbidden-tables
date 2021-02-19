@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { getEncounter } from '../index'
+import MessageError from '../../message-error'
+
 import './encounter.css'
 
 const EncounterForm = ({ setEncounter, setError }) => {
@@ -64,15 +66,6 @@ const EncounterItem = ({ item }) => {
     { item.type ? <p><strong className="type">Tipos de Terreno:</strong> {item.type}</p> : null }
     <div className="table">{item.table}</div>
   </div>)
-}
-
-const MessageError = ({ error = false }) => {
-
-  if (error) {
-    return (<p className="message-error">{error}</p>)
-  }
-
-  return null
 }
 
 const Encounter = () => {
