@@ -2,6 +2,24 @@
   font-family: 'Times New Roman';
 }
 
+.app > div > h1 {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.app > div > p > button {
+  display: inline;
+}
+
+.app > div > p {
+  text-align: center;
+  font-style: italic;
+  font-size: 17px;
+  white-space: pre-line;
+}
+
 .app > p {
   text-align: center;
   font-size: 20px;
