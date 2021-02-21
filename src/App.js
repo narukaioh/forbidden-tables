@@ -1,14 +1,15 @@
-import Encounter from './components/encounters/component'
+import { Router } from 'react-router'
+import { ROUTES_CONFIG } from './routes/config'
+import history from './routes/history'
+import Routes from './routes'
+
 import './app.css'
 
 const App = () => {
   return (
-    <div className="app">
-      <p><strong>Encontros aleatórios</strong></p>
-      <Encounter />
-
-      <span className="developed-by">by <a href="https://github.com/narukaioh">@narukaioh</a></span>
-    </div>
+    <Router history={history} >
+      <Routes routes={ROUTES_CONFIG} />
+    </Router>
   );
 }
 
