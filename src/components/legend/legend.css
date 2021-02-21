@@ -1,0 +1,26 @@
+.legend h1 {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.legend h5 {
+  font-weight: bold;
+  text-decoration: dotted;
+  font-style: oblique;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 35px;
+}
+
+.legend p {
+  text-align: center;
+  font-style: italic;
+  font-size: 17px;
+  white-space: pre-line;
+}
+
+.legend button {
+  display: inline;
+}

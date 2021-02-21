@@ -2,6 +2,7 @@ import { useState } from "react"
 import MessageError from "../../message-error"
 import EncounterItem from "./encounter-item"
 import EncounterForm from "./encounter-form"
+import PageDefault from "../../../pages/page-default"
 
 import "./encounter.css"
 
@@ -20,15 +21,12 @@ const Encounter = () => {
 
 const EncounterPage = () => {
   return (
-    <div className="app">
+    <PageDefault>
       <p>
         <strong>Encontros aleatórios</strong>
       </p>
       <Encounter />
-      <span className="developed-by">
-        by <a href="https://github.com/narukaioh">@narukaioh</a>
-      </span>
-    </div>
+    </PageDefault>
   )
 }
 

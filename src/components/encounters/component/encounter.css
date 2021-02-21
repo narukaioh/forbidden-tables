@@ -6,6 +6,7 @@
   margin: 10px auto;
 }
 
+button,
 .encounter-form button,
 .encounter-form select,
 .encounter-form input {
@@ -27,6 +28,7 @@
   width: 100%;
 }
 
+button,
 .encounter-form button {
   padding: 5px;
   display: block;
