@@ -1,4 +1,5 @@
 import { d66, d6, d8 } from "../../dices"
+import { validRange } from '../../dices/valid-range'
 
 const whenHappened = (d66) => {
   let id
@@ -161,8 +162,6 @@ const thereWasOne = (number) => {
 
   return table[getIndex(number, table)]
 }
-
-const validRange = (number, min, max) => parseInt(number) >= min && parseInt(number) <= max
 
 const terrainType = (number) => {
   let id = null
