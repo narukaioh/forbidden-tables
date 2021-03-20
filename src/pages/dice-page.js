@@ -9,9 +9,20 @@ const DicePage = () => {
     attribute: 0, 
     skill: 0, 
     gear: 0,
-    attributesDices: [],
-    skillDices: [],
-    gearDices: []
+    dices: {
+      attribute: [],
+      skill: [],
+      gear: [],
+    },
+    success: {
+      attribute: 0,
+      skill: 0,
+      gear: 0,
+    },
+    fail: {
+      attribute: 0,
+      gear: 0,
+    },
   })
 
   const handleChange = (event) => {
@@ -22,17 +33,38 @@ const DicePage = () => {
     })
   }
 
+  const countValues = (arr, value) => arr.filter(i => i === value).length
+
+  const createListValues = (length) => [...Array(length)].map(i => d6({}))
+
   const handleClick = (event) => {
-    let attributesDices = [...Array(state.attribute)].map(i => d6({}))
-    let skillDices = [...Array(state.skill)].map(i => d6({}))
-    let gearDices = [...Array(state.gear)].map(i => d6({}))
+    let dices = { 
+      attribute: createListValues(state.attribute),
+      skill: createListValues(state.skill),
+      gear: createListValues(state.gear)
+    }
+
+    let success = {
+      attribute: countValues(dices.attribute, 6),
+      skill: countValues(dices.skill, 6),
+      gear: countValues(dices.gear, 6)
+    }
+
+    let fail = {
+      attribute: countValues(dices.attribute, 1),
+      gear: countValues(dices.gear, 1)
+    }
 
     setState({
       ...state,
-      attributesDices,
-      skillDices,
-      gearDices
+      dices,
+      success,
+      fail,
     })
+  }
+
+  const handlePush = (event) => {
+
   }
 
   return (
@@ -56,21 +88,21 @@ const DicePage = () => {
       
       <p className="paragraph-container">
         <button type="button" onClick={handleClick}>Rolar dados!</button>
-        <button type="button">Push!</button>
+        <button type="button" onClick={handlePush}>Push!</button>
       </p>
 
       <div className="dices-container">
         <h2>Atributo</h2>
         <div className="dice-container">
-          {state.attributesDices.map((number, index) => <DiceComponent key={index} color="white" value={number} /> )}
+          {state.dices.attribute.map((number, index) => <DiceComponent key={index} color="white" value={number} /> )}
         </div>
         <h2>Perícia</h2>
         <div className="dice-container">
-          {state.skillDices.map((number, index) => <DiceComponent key={index} color="red" value={number} /> )}
+          {state.dices.skill.map((number, index) => <DiceComponent key={index} color="red" value={number} /> )}
         </div>
         <h2>Equipamento</h2>
         <div className="dice-container">
-          {state.gearDices.map((number, index) => <DiceComponent key={index} color="black" value={number} /> )}
+          {state.dices.gear.map((number, index) => <DiceComponent key={index} color="black" value={number} /> )}
         </div>
       </div>
     </PageDefault>
