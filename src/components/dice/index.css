@@ -90,7 +90,7 @@
 .dices-result-container {
   display: flex;
   flex-wrap: wrap;
-  width: 500px;
+  max-width: 500px;
   margin: 0 auto;
   justify-content: center;
   margin-top: 20px;
